@@ -1,0 +1,323 @@
+*{
+    margin:0;
+    padding:0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#banner{
+    background: linear-gradient(rgba(0,0,0,0.5), #009688), url(../images/banner.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    width:100%;
+    z-index: 1;
+}
+
+#banner-text{
+    text-align: left;
+    color: white;
+}
+
+#banner-text h1{
+    font-size: 120px;
+}
+
+#banner-text h1 a{
+    color: white;
+    text-decoration: none;
+    font-family: 'Lobster';
+}
+
+#content {
+    width: 35%;   
+    min-width: 400px; 
+    margin: 0 auto;
+    border: 0.5px none white;
+    border-radius: 5px;
+    background-color: #009688;
+    color:white;
+    padding: 10px 0 20px 0;
+    box-shadow: 5px 5px #018073;
+}
+
+#content h1{
+    text-align:center;
+    margin: 20px 0px;
+}
+
+#content p{
+    margin: 0px 20px;    
+}
+
+#content form {
+    margin:20px 20px;
+    text-align:center;
+    padding-bottom: 50px;
+}
+
+#content form p{
+    margin-bottom: 20px;
+}
+
+#content input{
+    width: 50%;
+    padding: 5px 0;
+    margin: 5px 0;
+    border-radius: 5px;
+    border: 0.5px solid white;    
+}
+
+#textbox {
+    height: 80px;
+    width: 50%;
+    margin: 5px 0;
+    border-radius: 5px;
+    border: 0.5px solid white;
+    resize: none;
+}
+
+#btn {
+    height:30px;    
+    background-color: white;
+    color: black;
+}
+
+#btn:hover{    
+    background-color: #009688;
+    color:white;
+    cursor:pointer;
+}
+
+#navbar{
+    height: 100vh;
+    width: 250px;      
+    position: fixed;
+    top: 0px;
+    right: -250px;
+    background: #009688;
+    transition: 0.5s;
+    z-index:2;
+}
+
+
+nav ul li{
+    list-style: none;
+    font-weight: 100;
+    margin-left:10px;
+    margin-top: 30px;
+}
+
+
+nav ul li a{
+    display: inline-block;
+    width:160px;
+    text-decoration: none;
+    padding: 12px 0 12px 5px;
+    color:white;
+    border-radius: 5px;
+    transition: 0.8s;
+    font-size:20px;
+    margin-top: 50px ;
+}
+
+nav ul li a:hover{
+    color:black;
+    border: 0.5px solid white;    
+    background-color:white;    
+    padding-left: 10px;
+}
+
+#loginbtn{
+    font-size:14px;
+    position:fixed;
+    bottom:10px;
+    width: 90px;
+}
+
+#menubtn{
+    width:50px;
+    height: 50px;
+    background: #009688;
+    text-align: center;
+    position:fixed;
+    right: 30px;
+    top: 20px;
+    border-radius: 3px;
+    z-index: 3;
+    cursor: pointer;    
+}
+
+#menubtn:hover{
+    background: #01796d;
+}
+
+#menubtn img{
+    width: 20px;
+    margin-top: 15px;
+}
+
+.overlay{
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    position: fixed;
+    top:0;
+    left: 0;
+    opacity: 0.7;
+    z-index: -1;
+}
+
+#closeoverlay{
+    width: 30px;
+    height: 30px;
+    position: fixed;
+    right:30%;
+    top: 40px;
+    cursor: pointer;    
+}
+
+#loginbox{
+    background: white;
+    width: 30%;
+    min-width: 400px;
+    height: 30vh;
+    min-height: 300px;
+    position: fixed;    
+    top: 80px;
+    left:35%;    
+    border-radius: 10px;
+    opacity: 1;
+    z-index: -1;
+    text-align:center;
+}
+#loginbox h1{
+    text-align: center;
+    color: #009688;
+    margin: 25px 0;
+}
+
+#loginbox button{
+    margin: 20px;
+    width: 120px;
+    height:30px;
+    border-radius: 10px;
+    background: #009688;
+    color:white;
+    border-color: white;
+    box-shadow: none;
+}
+
+#loginbox button:hover{
+    cursor: pointer;    
+    background: #017c70;
+}
+
+#loginbox button:active{    
+    background: white;
+    color: black;
+}
+
+#loginbox p{
+    font-size:12px;
+}
+
+#regbtn {
+    color:black;
+}
+
+#regbox{
+    background: white;
+    width: 30%;
+    min-width: 400px;
+    height: 50vh;
+    min-height: 300px;
+    position: fixed;    
+    top: 80px;
+    left:35%;    
+    border-radius: 10px;
+    opacity: 1;
+    z-index: -2;
+    text-align:center;
+}
+#regbox h1{
+    text-align: center;
+    color: #009688;
+    margin: 25px 0;
+}
+
+#regbox button{
+    margin: 30px;
+    width: 200px;
+    height:40px;
+    border-radius: 10px;
+    background: #009688;
+    color:white;
+    border-color: white;
+    box-shadow: none;
+}
+
+#regbox button:hover{
+    cursor: pointer;
+    background: #017c70;
+}
+
+#regbox button:active{    
+    background: white;
+    color: black;
+}
+#regbox input{
+    margin-bottom: 10px;
+    height:15px;
+}
+
+
+#regbox p{
+    font-size:12px;
+}
+
+@media screen and (max-width: 670px) {
+    
+    #banner-text h1{
+        text-align:center;
+        font-size: 50px;
+    }
+    
+    nav ul {        
+        margin-top: 70px;
+    }
+    
+    nav ul li a{        
+        margin-top: 10px ;
+    }
+
+    #content {
+        width: 80%;
+        /*height: 400px;*/
+        margin: 40px auto 0px auto;
+        border:0px solid white;
+        border-radius: 10px;
+        background-color: #009688;
+        color:white;
+    }
+
+    #content h1{
+        padding: 15px 0 0 0;        
+    }
+    #closeoverlay{
+        top: 10px;
+        left: 10px;
+    }
+
+    #loginbox{
+        width: 60%;
+        left: 10%;
+        height: 50vh;
+    }
+
+    #regbox{
+        width: 60%;
+        left: 10%;
+        height: 70vh;
+    }
+
+    
+  }

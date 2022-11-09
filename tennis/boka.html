@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="sv">
+    <head>                
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">          
+        <title>Startsida</title>
+        <link rel="stylesheet" href="resources\css\style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+
+    </head>
+
+    <body>
+        <section id="banner">
+            <div id="banner-text">
+                <h1><a href="index.html">PPTK</a></h1>
+                
+            </div>
+            <div id="content">
+                <h1>Boka</h1>
+                <p>Vad kul att du har hittat hit!                    
+                    Vi på ProPlayer Tennisklubb håller för tillfället på att utveckla vår hemsida                    
+                    men klicka gärna runt i menyerna och titta vad som är på gång.
+
+                </p>
+
+            </div>
+        </section>
+        
+        <div id="navbar">                                       
+            <nav>
+                
+                <ul>
+                    <li><a href="boka.html">Boka tid</a></li>
+                    <li><a href="banor.html">Banor</a></li>
+                    <li><a href="omkl.html">Omklädningsrum</a></li>
+                    <li><a href="bastu.html">Bastu</a></li>
+                    <li><a href="kontakt.html">Kontakt</a></li>
+                </ul>
+           </nav>
+
+        </div>
+        <div id="menubtn">
+            <img src="resources/images/menu.png" id="menu">
+        </div>
+        <script>
+            var menubtn = document.getElementById("menubtn")
+            var navbar = document.getElementById("navbar")
+            var menu = document.getElementById("menu")
+
+            navbar.style.right = "-250px";
+
+            menubtn.onclick = function() {
+                if (navbar.style.right == "-250px"){
+                    navbar.style.right = "0";
+                    menu.src = "resources/images/close.png";
+                }
+                else {
+                    navbar.style.right = "-250px";
+                    menu.src = "resources/images/menu.png"
+                }
+            }
+        </script>
+
+
+
+
+
+    </body>
+
+
+
+
+</html>
