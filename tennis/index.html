@@ -3,7 +3,7 @@
     <head>                
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />  
         <meta name="viewport" content="width=device-width, initial-scale=1">     
-        <title>Startsida</title>
+        <title>PP Tennisklubb</title>
         <link rel="stylesheet" href="resources\css\style.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,13 +12,15 @@
     </head>
 
     <body>
+        
+        <!-- This section contains the background img, PPTK logo and currently a welcome text to the user -->
         <section id="banner">
             <div id="banner-text">
                 <h1><a href="index.html">PPTK</a></h1>
                 
             </div>
             <div id="content">
-                <h1>Välkommen till PPTK</h1>
+                <h1 id="rubrik">Välkommen till PPTK</h1>
                 <p>Vad kul att du har hittat hit!                    
                     Vi på ProPlayer Tennisklubb håller för tillfället på att utveckla vår hemsida                    
                     men klicka gärna runt i menyerna och titta vad som är på gång.
@@ -28,6 +30,7 @@
             </div>
         </section>
         
+        <!-- This div contains the menu -->
         <div id="navbar">                                       
             <nav>
                 
@@ -41,95 +44,37 @@
                 </ul>
            </nav>
         </div>
+
+        <!-- The button that open/close the menu -->
         <div id="menubtn">
             <img src="resources/images/menu.png" id="menu">
         </div>
-        <script>
-            var menubtn = document.getElementById("menubtn")
-            var navbar = document.getElementById("navbar")
-            var menu = document.getElementById("menu")
-            
-            navbar.style.right = "-250px";
-
-            menubtn.onclick = function() {
-                //If menu is closed and screen width <= 670, open menu as fullscreen
-                if (navbar.style.right == "-250px" && window.innerWidth <= 670){
-                    navbar.style.right = "0";
-                    navbar.style.width = "100%";
-                    navbar.style.textAlign = "center";
-                    menu.src = "resources/images/close.png";
-                }
-                //If menu is closed and screen width is not below the threshold (670px)
-                else if (navbar.style.right == "-250px"){
-                    navbar.style.right = "0";                    
-                    menu.src = "resources/images/close.png";
-                }
-                //If menu is open and screen width <= 670px
-                else if (navbar.style.right == "0px" && window.innerWidth <= 670){
-                    navbar.style.right = "-250px";
-                    navbar.style.width = "250px";
-                    menu.src = "resources/images/menu.png";
-                }
-                //If menu is open and screen width is not below the threshold (670px)
-                else {
-                    navbar.style.right = "-250px";
-                    navbar.style.width = "250px";
-                    menu.src = "resources/images/menu.png"
-                }
-            }
-        </script>
-
+        
+        <!-- This div contains the dark overlay that is placed between the banner/background and the current menuchoice -->
         <div class="overlay" id ="login">
-            <img id="closeoverlay" src="resources/images/close.png"> 
+            
         </div>
+
+        <!-- This div contains the login window -->
         <div id="loginbox">            
             <h1>Logga in</h1>
-            <form>
+            <img id="closeoverlay" src="resources/images/closeblack.png"> 
+            <form autocomplete="off">
                 <label for="username">Användarnamn</label><br>    
                 <input type="text" id="username" name="username"><br>
                 <label for="pword">Lösenord</label><br>
                 <input type="password" id="pword" name="pword"><br>
                 <button href="#" id="confirmlogin">Logga in</button>
                 <p >Ej medlem? Klicka <a href="#" id="regbtn">här</a> för att registrera dig</p>
-
+                
             </form>
         </div>
-
-        <script>
-            var overlay = document.getElementById("login");
-            var closeoverlay = document.getElementById("closeoverlay");
-            var loginbtn = document.getElementById("loginbtn");
-            var navbar = document.getElementById("navbar");
-            var loginbox = document.getElementById("loginbox");
-            var confirmlogin = document.getElementById("confirmlogin");
-
-            loginbtn.onclick = function(){
-                
-                overlay.style.zIndex = "3";
-                navbar.style.right = "-250px";
-                navbar.style.width = "250px";
-                menu.src = "resources/images/menu.png";
-                loginbox.style.zIndex = "10";
-
-            }
-
-            closeoverlay.onclick = function(){
-                overlay.style.zIndex = "-1";
-                loginbox.style.zIndex = "-1"
-                regbox.style.zIndex = "-2";
-            }
-
-            confirmlogin.onclick = function(){
-                overlay.style.zIndex = "-1";
-                loginbox.style.zIndex = "-1"
-            }
-
-            
-        </script>
-
+        
+        <!-- This div contains the register window -->
         <div id="regbox">
             <h1>Registrering</h1>
-            <form>
+            <img id="closeoverlay" src="resources/images/closeblack.png"> 
+            <form autocomplete="off">
                 <label for="username">Användarnamn</label><br>    
                 <input type="text" id="username" name="username"><br>
                 
@@ -153,33 +98,7 @@
             </form>
         </div>
 
-        <script>
-            var regbtn = document.getElementById("regbtn");
-            var loginbox =document.getElementById("loginbox");
-            var regbox =document.getElementById("regbox");
-            var confirmreg = document.getElementById("confirmreg");
-
-            regbtn.onclick = function(){
-                loginbox.style.zIndex = "-1";
-                regbox.style.zIndex = "5";
-            }
-
-            confirmreg.onclick = function(){
-                
-                loginbox.style.zIndex = "5";
-                regbox.style.zIndex = "-1";
-            }
-
-            
-        </script>
-
-
-
-
-
+        <!-- Link to the .js file -->
+        <script src="script.js"></script>
     </body>
-
-
-
-
 </html>
