@@ -1,104 +1,142 @@
 <!DOCTYPE html>
 <html lang="sv">
-    <head>                
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />  
-        <meta name="viewport" content="width=device-width, initial-scale=1">     
-        <title>PP Tennisklubb</title>
-        <link rel="stylesheet" href="resources\css\style.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
 
-    </head>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PP Tennisklubb</title>
+    <link rel="stylesheet" href="resources\css\style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
 
-    <body>
-        
-        <!-- This section contains the background img, PPTK logo and currently a welcome text to the user -->
-        <section id="banner">
-            <div id="banner-text">
-                <h1><a href="index.html">PPTK</a></h1>
-                
-            </div>
-            <div id="content">
-                <h1 id="rubrik">Välkommen till PPTK</h1>
-                <p>Vad kul att du har hittat hit!                    
-                    Vi på ProPlayer Tennisklubb håller för tillfället på att utveckla vår hemsida                    
-                    men klicka gärna runt i menyerna och titta vad som är på gång.
+</head>
 
-                </p>
+<body>
 
-            </div>
-        </section>
-        
-        <!-- This div contains the menu -->
-        <div id="navbar">                                       
-            <nav>
-                
-                <ul>
-                    <li><a href="boka.html">Boka tid</a></li>
-                    <li><a href="banor.html">Banor</a></li>
-                    <li><a href="omkl.html">Omklädningsrum</a></li>
-                    <li><a href="bastu.html">Bastu</a></li>
-                    <li><a href="kontakt.html">Kontakt</a></li>
-                    <li><a id="loginbtn" href ="#">Logga in</a></li>
-                </ul>
-           </nav>
+    <!-- This section contains the background img, PPTK logo and currently a welcome text to the user -->
+    <section id="banner">
+        <div id="banner-text">
+            <h1><a>PPTK</a></h1>
+            <p id="loginstatus">Ej inloggad</p>
+
+        </div>
+        <div class="content" id="start">
+            <h1 id="rubrik">Välkommen till PPTK</h1>
+            <p>Vad kul att du har hittat hit!
+                Vi på ProPlayer Tennisklubb håller för tillfället på att utveckla vår hemsida
+                men klicka gärna runt i menyerna och titta vad som är på gång.
+
+            </p>
+
+        </div>
+        <div class="content" id="booking">
+            <h1>Bokning</h1>
+            <form>
+                <label>Datum</label>
+                <input type="date" id="date" > <br>
+                <label>Bana (1-4)</label>
+                <input type="number" id="court"> <br>
+                <button type="submit" id="showTimes" onclick="updateList()">Visa tider</button>
+                <div class="time-container" id="timeContainer">
+
+                </div>
+            </form>
         </div>
 
+        <div class="content" id="courts">
+            <h1>Banor</h1>
+            <p>Här kan du se banorna</p>
+        </div>
+
+        <div class="content" id="facilities">
+            <h1>Faciliteter</h1>
+            <p>Här kan du se våra faciliteter</p>
+        </div>
+
+        <div class="content" id="contact">
+            <h1>Kontakt</h1>
+            <p>Här kan du kontakta oss</p>
+        </div>
+    </section>
+
+    <!-- This div contains the menu -->
+    <div id="navbar">
+        <nav>
+            <ul>
+                <li><a id="menuBooking">Boka tid</a></li>
+                <li><a id="menuCourts">Banor</a></li>
+                <li><a id="menuFacilities">Faciliteter</a></li>
+                <li><a id="menuContact">Kontakt</a></li>
+                <li><a id="loginbtn" onclick="loginButton()">Logga in</a></li>
+            </ul>
+        </nav>
         <!-- The button that open/close the menu -->
-        <div id="menubtn">
+        <div id="menubtn" onclick="handleNavbar()">
             <img src="resources/images/menu.png" id="menu">
         </div>
-        
-        <!-- This div contains the dark overlay that is placed between the banner/background and the current menuchoice -->
-        <div class="overlay" id ="login">
-            
-        </div>
+    </div>
 
-        <!-- This div contains the login window -->
-        <div id="loginbox">            
-            <h1>Logga in</h1>
-            <img id="closeoverlay" src="resources/images/closeblack.png"> 
-            <form autocomplete="off">
-                <label for="username">Användarnamn</label><br>    
-                <input type="text" id="username" name="username"><br>
-                <label for="pword">Lösenord</label><br>
-                <input type="password" id="pword" name="pword"><br>
-                <button href="#" id="confirmlogin">Logga in</button>
-                <p >Ej medlem? Klicka <a href="#" id="regbtn">här</a> för att registrera dig</p>
-                
-            </form>
-        </div>
-        
-        <!-- This div contains the register window -->
-        <div id="regbox">
-            <h1>Registrering</h1>
-            <img id="closeoverlay" src="resources/images/closeblack.png"> 
-            <form autocomplete="off">
-                <label for="username">Användarnamn</label><br>    
-                <input type="text" id="username" name="username"><br>
-                
-                <label for="fname">Förnamn</label><br>    
-                <input type="text" id="fname" name="fname"><br>
-                
-                <label for="lname">Efternamn</label><br>    
-                <input type="text" id="lname" name="lname"><br>
-                
-                <label for="email">E-mail</label><br>    
-                <input type="email" id="email" name="email"><br>
-                
-                <label for="pword">Lösenord</label><br>
-                <input type="password" id="pword" name="pword"><br>
-                <label for="checkpword">Bekräfta lösenord</label><br>
-                <input type="password" id="checkpword" name="checkpword"><br>
-                
-                <button type="reset" id="confirmreg">Registrera</button>
-                
 
-            </form>
-        </div>
 
-        <!-- Link to the .js file -->
-        <script src="script.js"></script>
-    </body>
+    <!-- This div contains the dark overlay that is placed between the banner/background and login/registration -->
+    <div class="overlay" id="login">
+
+    </div>
+
+    <!-- This div contains the login window -->
+    <div id="loginbox">
+        <h1>Logga in</h1>
+        <img class="closeoverlay" src="resources/images/closeblack.png" id="closelogin" onclick="closeLogin()">
+        <form autocomplete="off" id="loginform">
+            <label for="username">Användarnamn</label><br>
+            <input type="text" id="uname" name="username"><br>
+            <label for="pword">Lösenord</label><br>
+            <input type="password" id="pword" name="pword"><br>
+            <button id="confirmlogin">Logga in</button>
+            <p>Ej medlem? Klicka <a href="#" id="regbtn" onclick="openRegForm()">här</a> för att registrera dig</p>
+
+        </form>
+    </div>
+
+    <!-- This div contains the register window -->
+    <div id="regbox">
+        <h1>Registrering</h1>
+        <img class="closeoverlay" src="resources/images/closeblack.png" id="closereg" onclick="closeRegBox()">
+        <form autocomplete="off" id="regform">
+            <label for="username">Användarnamn</label><br>
+            <input type="text" id="username" name="username"><br>
+
+            <label for="fname">Förnamn</label><br>
+            <input type="text" id="fname" name="fname"><br>
+
+            <label for="lname">Efternamn</label><br>
+            <input type="text" id="lname" name="lname"><br>
+
+            <label for="email">E-mail</label><br>
+            <input type="email" id="email" name="email"><br>
+
+            <label for="pword">Lösenord</label><br>
+            <input type="password" id="password" name="pword"><br>
+            <label for="checkpword">Bekräfta lösenord</label><br>
+            <input type="password" id="checkpword" name="checkpword"><br>
+
+            <button id="confirmreg">Registrera</button>
+
+
+        </form>
+    </div>
+
+
+
+    <!-- Link to the .js file -->
+    <script src="script.js"></script>
+    <script src="regValidation.js"></script>
+    <script src="menuChoice.js"></script>
+    <script src="loginValidation.js"></script>
+    <script src="booking.js"></script>
+    
+</body>
+
 </html>

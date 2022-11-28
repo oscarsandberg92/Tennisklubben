@@ -1,5 +1,7 @@
 // Get all the id's from index.html
-var closeoverlay = document.getElementById("closeoverlay");
+var closeoverlay = document.getElementsByClassName("closeoverlay");
+var closelogin = document.getElementById('closelogin');
+var closereg = document.getElementById('closereg')
 var confirmreg = document.getElementById("confirmreg");
 var confirmlogin = document.getElementById("confirmlogin");
 var loginbox =document.getElementById("loginbox");
@@ -11,13 +13,17 @@ var overlay = document.getElementById("login");
 var regbox =document.getElementById("regbox");
 var regbtn = document.getElementById("regbtn");
 
+let isLoggedIn = false;
+let loggedInUser; 
 
 
-            
+
+
 navbar.style.right = "-250px";
 
-menubtn.onclick = function() {
-    //If menu is closed and screen width <= 670, open menu as fullscreen
+// Opens or closes the navbar.
+function handleNavbar(){
+    
     if (navbar.style.right == "-250px" && window.innerWidth <= 670){
         navbar.style.right = "0";
         navbar.style.width = "100%";
@@ -26,7 +32,7 @@ menubtn.onclick = function() {
     }
     //If menu is closed and screen width is not below the threshold (670px)
     else if (navbar.style.right == "-250px"){
-        navbar.style.right = "0";      
+        navbar.style.right = "0";  
         navbar.style.textAlign = "left";              
         menu.src = "resources/images/close.png";
     }
@@ -45,39 +51,59 @@ menubtn.onclick = function() {
     }
 }
 
-
-//Open loginwindow
-loginbtn.onclick = function(){
-                
-    overlay.style.display = "block";
-    navbar.style.right = "-250px";
-    navbar.style.width = "250px";
-    menu.src = "resources/images/menu.png";
-    loginbox.style.display = "block";
-
+function loginButton(){
+    clearList();
+    if (isLoggedIn) {
+        logout();
     }
+    else {
+        overlay.style.display = "block";
+        navbar.style.right = "-250px";
+        navbar.style.width = "250px";
+        menu.src = "resources/images/menu.png";
+        loginbox.style.display = "block";
+    }             
+    
+}
 
-closeoverlay.onclick = function(){
-    overlay.style.display = "none";
-    loginbox.style.display = "none"
-    regbox.style.display = "none";
-    }
-
-confirmlogin.onclick = function(){
-    overlay.style.display = "none";
-    loginbox.style.display = "none"
-    }
-
-regbtn.onclick = function(){
+function openRegForm(){
     loginbox.style.display = "none";
     regbox.style.display = "block";
-    }
+}
 
-confirmreg.onclick = function(){
+function logout(){
+    alert(loggedInUser.username + ' är nu utloggad.');
+    isLoggedIn = false;
+    loggedInUser = null;
+    loginbtn.innerHTML = 'Logga in';
+    loginstatus.innerHTML = 'Ej inloggad';
+    hideAll();
+    handleNavbar();
+}
+
+
+//-------Classes------------
+
+// The User class
+class User{
+    constructor(username, fname, lname, email, password){
+                this.username = username;
+                this.fname = fname;
+                this.lname = lname;
+                this.email = email;
+                this.password = password;
                 
-    loginbox.style.display = "block";
-    regbox.style.display = "none";
-    }
+            }   
+            ownBookings = [];
+            checkPassword(passwordToCheck){
+                return this.password === passwordToCheck;
+            }
+}
+
+// Array to store all Users.
+let userArray= []
+
+
 
 
 
