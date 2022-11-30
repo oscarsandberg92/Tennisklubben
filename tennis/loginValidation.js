@@ -1,7 +1,7 @@
 const uname = document.getElementById('uname');
 const pword = document.getElementById('pword');
 const loginform = document.getElementById('loginform');
-const loginstatus = document.getElementById('loginstatus')
+const loginstatus = document.getElementById('loginstatus');
 
 
 loginform.addEventListener('submit', (e) => {
@@ -10,6 +10,7 @@ loginform.addEventListener('submit', (e) => {
     if (validate()) {
         loginstatus.innerHTML = 'Inloggad som: ' + loggedInUser.username;
         loginbtn.innerHTML = 'Logga ut';
+        menuMyBookings.style.visibility = 'visible';
         closeLogin();
         alert('Du är nu inloggad som: ' + loggedInUser.username);
     }
@@ -70,6 +71,9 @@ function clearInputs(){
         input.value = '';
     })
 }
+
+
+
 
 // Closes the login form and the overlay
 function closeLogin() {

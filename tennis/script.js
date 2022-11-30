@@ -16,7 +16,7 @@ var regbtn = document.getElementById("regbtn");
 let isLoggedIn = false;
 let loggedInUser; 
 
-
+if(!isLoggedIn)menuMyBookings.style.visibility = 'hidden';
 
 
 navbar.style.right = "-250px";
@@ -58,9 +58,9 @@ function loginButton(){
     }
     else {
         overlay.style.display = "block";
-        navbar.style.right = "-250px";
-        navbar.style.width = "250px";
-        menu.src = "resources/images/menu.png";
+        // navbar.style.right = "-250px";
+        // navbar.style.width = "250px";
+        menu.src = "resources/images/close.png";
         loginbox.style.display = "block";
     }             
     
@@ -77,7 +77,10 @@ function logout(){
     loggedInUser = null;
     loginbtn.innerHTML = 'Logga in';
     loginstatus.innerHTML = 'Ej inloggad';
+    menuMyBookings.style.visibility = 'hidden';
+    
     hideAll();
+    start.style.display = 'block';
     handleNavbar();
 }
 

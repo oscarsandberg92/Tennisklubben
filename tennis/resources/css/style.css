@@ -142,7 +142,6 @@
     right: -250px;
     background: #009688;
     transition: 0.5s;
-    /* z-index:1; */
 }
 
 
@@ -335,6 +334,61 @@ nav ul li a:hover{
     font-size:12px;
 }
 
+#myBookings{
+    background: white;
+    width: 30%;
+    min-width: 400px;
+    height: auto;
+    min-height: 300px;
+    position: fixed;    
+    top: 80px;
+    left:35%;    
+    border-radius: 10px;
+    opacity: 1;
+    z-index: 3;
+    display: none;
+    text-align:center;
+    color: black;
+}
+#myBookings h1{
+    text-align: center;
+    color: #009688;
+    margin: 25px 0;
+    display:inline-block;
+}
+
+#myBookings button{
+    margin: 20px;
+    width: 120px;
+    height:30px;
+    border-radius: 10px;
+    background: #009688;
+    color:white;
+    border-color: white;
+    box-shadow: none;
+}
+
+
+#myBookings button:hover{
+    cursor: pointer;    
+    background: #017c70;
+}
+
+#myBookings button:active{    
+    background: white;
+    color: black;
+}
+
+#myBookings input {
+    height: 25px;
+    border-radius: 5px;
+}
+
+#myBookings p{
+    font-size:12px;
+    
+}
+
 @media screen and (max-width: 670px) {
     
     #banner-text h1{
@@ -377,6 +431,16 @@ nav ul li a:hover{
         height: 50vh;
         margin:0;
     }
+
+    #myBookings{
+        width:90vw;
+        min-width: 200px;
+        left: 5vw;
+        height: 50vh;
+        margin:0;
+    }
+
+
 
     /* #loginbox input{
         height: 25px;
