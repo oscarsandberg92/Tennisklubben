@@ -22,15 +22,16 @@
             <p id="loginstatus">Ej inloggad</p>
 
         </div>
+        <!-- Home  -->
         <div class="content" id="start">
             <h1 id="rubrik">Välkommen till PPTK</h1>
-            <p>Vad kul att du har hittat hit!
-                Vi på ProPlayer Tennisklubb håller för tillfället på att utveckla vår hemsida
-                men klicka gärna runt i menyerna och titta vad som är på gång.
-
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vitae lobortis sem, a tempus purus. Suspendisse congue blandit hendrerit. Fusce suscipit, urna ac sollicitudin imperdiet, ex erat ullamcorper massa, quis ullamcorper nibh tellus ac libero. Etiam dui libero, placerat at pharetra sit amet, aliquam interdum nulla. Pellentesque eros odio, dapibus quis volutpat nec, consectetur vel lacus. Nulla vestibulum augue est. Nunc auctor gravida mi, ac tristique purus maximus et.
+                <br><br>
+                Curabitur lobortis nibh tortor, sed bibendum tortor porta sed. Nunc tortor orci, aliquet vitae molestie nec, condimentum id mauris. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque consequat nulla quam. Cras congue neque ligula, eget pharetra purus ultricies eget. Sed ultricies efficitur lectus non maximus. Fusce ultricies, magna id iaculis venenatis, orci enim convallis metus, ut venenatis dolor purus nec ipsum. Curabitur nec semper diam.
+                <br><br>
             </p>
-
         </div>
+        <!-- Booking  -->
         <div class="content" id="booking">
             <h1>Bokning</h1>
             <form>
@@ -44,31 +45,45 @@
                 </div>
             </form>
         </div>
-
+        <!-- Courts -->
         <div class="content" id="courts">
             <h1>Banor</h1>
-            <p>Här kan du se banorna</p>
+            <p id="courtInfo">
+                Bana 1 är våran lyxiga center-court med riktig wimbledon-känsla<br>
+                Pris: 500kr/h<br>
+                Underlag: Gräs<br>                               
+            </p>
+            <img src="./resources/images/bana1.jpg" alt="Bana1"  id="courtpictures" onclick="nextCourtImg()">
+            <small style="font-style: italic">Klicka på bilden för gå vidare till nästa bana</small>
         </div>
-
+        <!-- Facilities -->
         <div class="content" id="facilities">
             <h1>Faciliteter</h1>
-            <p>Här kan du se våra faciliteter</p>
+            <p id="facilitiesInfo">
+                Det finns väl inget bättre än att sätta sig i bastun efter ett träningspass? <br>
+                Hos oss kan du göra just det, och det ingår i den bokning. Du betalar alltså inget extra för detta.                              
+            </p>
+            <img src="./resources/images/sauna.jpg" alt="Bana1"  id="facilitiesPictures" onclick="nextFacImg()">
+            <small style="font-style: italic">Klicka på bilden för gå vidare till nästa bild</small>
         </div>
-
+        <!-- My bookings -->
         <div class="content" id="myBookings">
             <img class="closeoverlay" src="resources/images/closeblack.png" id="closeMyBookings" onclick="closeMybookings()">
             <h1>Mina bokningar</h1>
-            <div id =myBookingsList></div>
-            
+            <div id =myBookingsList></div>            
         </div>
-
+        <!-- Contact -->
         <div class="content" id="contact">
-            <h1>Kontakt</h1>
-            
-            <p>Här kan du kontakta oss</p>
+            <h1>Kontakt</h1>            
+            <p>Här kan du kontakta oss:</p>
+            <ul>
+                <li>Telefon: 011-123456789</li>
+                <li>Email: kontakt@pptk.se</li>
+                <li>Address: Tennisgatan 1</li>
+                <li>Öppetider: Alla dagar 09:00-21:00</li>
+            </ul>
         </div>
     </section>
-
     <!-- This div contains the menu -->
     <div id="navbar">
         <nav>
@@ -86,11 +101,8 @@
             <img src="resources/images/menu.png" id="menu">
         </div>
     </div>
-
-
-
-    <!-- This div contains the dark overlay that is placed between the banner/background and login/registration -->
-    <div class="overlay" id="login">
+    <!-- This div contains the dark overlay that is placed between the main window and the popup windows -->
+    <div class="overlay" id="overlay">
 
     </div>
 
@@ -124,7 +136,7 @@
             <input type="text" id="lname" name="lname"><br>
 
             <label for="email">E-mail</label><br>
-            <input type="email" id="email" name="email"><br>
+            <input type="text" id="email" name="email"><br>
 
             <label for="pword">Lösenord</label><br>
             <input type="password" id="password" name="pword"><br>
@@ -132,20 +144,10 @@
             <input type="password" id="checkpword" name="checkpword"><br>
 
             <button id="confirmreg">Registrera</button>
-
-
         </form>
     </div>
-
-
-
-    <!-- Link to the .js file -->
-    <script src="script.js"></script>
-    <script src="regValidation.js"></script>
-    <script src="menuChoice.js"></script>
-    <script src="loginValidation.js"></script>
-    <script src="booking.js"></script>
-    
+    <!-- Link to the .js files -->
+    <script src="script.js"></script>    
 </body>
 
 </html>

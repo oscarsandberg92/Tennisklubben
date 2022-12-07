@@ -15,9 +15,9 @@ Todo-List:
 VALIDATION TODOS:
 [X] Check if email already exists
 [X] Set appropriate min/max on court selection.
-[ ] Make it impossible to have a username with less than 4 characters.
-[ ] Make it impossible to have numbers and symbols in  first name and last name
-[ ] Make sure it is a valid email. The built in control accepts for example oscar@com, wich is not a valid email
+[X] Make it impossible to have a username with less than 4 characters.
+[X] Make it impossible to have numbers and symbols in  first name and last name
+[X] Make sure it is a valid email. The built in control accepts for example oscar@com, wich is not a valid email
 [X] Check if date has not passed
 [ ] Check if time has not passed
 
@@ -25,12 +25,8 @@ VALIDATION TODOS:
 
 
 [ ] Add a function to cancel a booking (?) maybe 
-
-
-[ ] Fill the "content" divs with content
-
-
-[ ] Refactor and clean up the code
+[X] Fill the "content" divs with content
+[X] Refactor and clean up the code
 
 
 
