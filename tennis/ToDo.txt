@@ -19,8 +19,7 @@ VALIDATION TODOS:
 [X] Make it impossible to have numbers and symbols in  first name and last name
 [X] Make sure it is a valid email. The built in control accepts for example oscar@com, wich is not a valid email
 [X] Check if date has not passed
-[ ] Check if time has not passed
-
+[ ] Change login alert 
 
 
 
