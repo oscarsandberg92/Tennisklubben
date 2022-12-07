@@ -33,6 +33,7 @@ const myBookingsList = document.getElementById('myBookingsList');
 const timeContainer = document.getElementById('timeContainer');
 const timelist = document.getElementsByClassName('bookBtn');
 const start = document.getElementById('start');
+const showTimes = document.getElementById('showTimes');
 
 // -----------------------------------------------------
 // Navbar
@@ -202,7 +203,7 @@ function handleNavbar() {
 }
 
 //Hides all "content" divs 
-function hideAll() {
+function hideAll() {    
     start.style.display = 'none';
     booking.style.display = 'none';
     courts.style.display = 'none';
@@ -292,7 +293,7 @@ function loginValidate() {
 
         // If the username does not exist, alert the user and return false
         if (userIndex === -1) {
-            alert('Användarnamnet finns ej.');
+            alert('Fel användarnamn eller lösenord.');
             return false;
         }
 
@@ -303,7 +304,7 @@ function loginValidate() {
             return true;
         }
         else {
-            alert('Fel lösenord. \nVänligen försök igen.')
+            alert('Fel användarnamn eller lösenord');
             return false;
         }
     }
@@ -590,6 +591,13 @@ menuContact.onclick = function () {
     hideAll();
     contact.style.display = 'block';
 }
+
+showTimes.onclick = function (e) {
+    e.preventDefault();
+    updateList();
+}
+
+
 //#endregion
 
 //------------Classes------------

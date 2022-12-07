@@ -11,20 +11,13 @@ Todo-List:
 [X] Inform the user that he/she needs to login before bookings
 [X] Menuchoice to display the users bookings.
 [X] Add an alert when a booking is made
-
-VALIDATION TODOS:
 [X] Check if email already exists
 [X] Set appropriate min/max on court selection.
 [X] Make it impossible to have a username with less than 4 characters.
 [X] Make it impossible to have numbers and symbols in  first name and last name
 [X] Make sure it is a valid email. The built in control accepts for example oscar@com, wich is not a valid email
 [X] Check if date has not passed
-[ ] Check if time has not passed
-
-
-
-
-[ ] Add a function to cancel a booking (?) maybe 
+[X] Change login alert 
 [X] Fill the "content" divs with content
 [X] Refactor and clean up the code
 
