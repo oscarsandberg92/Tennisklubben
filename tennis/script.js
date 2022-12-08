@@ -569,6 +569,7 @@ menuBooking.onclick = function () {
     }
     else {
         hideAll();
+        handleNavbar();
         booking.style.display = 'block';
         if (window.innerWidth <= 670) {
             navbar.style.right = '-250px';
@@ -579,16 +580,19 @@ menuBooking.onclick = function () {
 
 menuCourts.onclick = function () {
     hideAll();
+    handleNavbar();
     courts.style.display = 'block';
 }
 
 menuFacilities.onclick = function () {
     hideAll();
+    handleNavbar();
     facilities.style.display = 'block';
 }
 
 menuContact.onclick = function () {
     hideAll();
+    handleNavbar();
     contact.style.display = 'block';
 }
 
